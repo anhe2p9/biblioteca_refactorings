@@ -1,0 +1,13 @@
+features
+	root {abstract}
+		optional
+			A
+				[0]
+					D
+					E
+				mandatory
+					F
+		mandatory
+			B
+		mandatory
+			C

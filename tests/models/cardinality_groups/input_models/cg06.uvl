@@ -1,0 +1,18 @@
+namespace Root
+
+features
+	Root {abstract}	
+		optional
+			F1	
+				[2..3]
+					F2
+					F3	
+						[2..3]
+							F5
+							F6
+							F7
+					F4	
+						[2..3]
+							F8
+							F9
+							F10

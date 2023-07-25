@@ -1,0 +1,26 @@
+features
+	A{abstract, extended__}
+		mandatory
+			B
+				optional
+					E
+				optional
+					F
+		optional
+			C
+				optional
+					G
+		optional
+			D
+				optional
+					H
+		mandatory
+			OR{abstract}
+				or
+					E_1{abstract}
+					C_1{abstract}
+					H_1{abstract}
+constraints
+	E_1 => E
+	C_1 => C
+	H_1 => ! H

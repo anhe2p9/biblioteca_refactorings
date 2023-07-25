@@ -1,0 +1,19 @@
+namespace Pizza
+
+features
+	A {abstract}	
+		mandatory
+			B	
+				alternative
+					E
+					F
+			C	
+				alternative
+					G
+					H
+
+		optional
+			D
+
+constraints
+	D & H => F

@@ -1,0 +1,25 @@
+features
+	Root {abstract}
+		optional
+			F1
+				optional
+					F11 {abstract}
+						alternative
+							F2
+							F3
+								optional
+									F6
+										optional
+											F5
+												optional
+													F51 {abstract}
+														alternative
+															F7
+															F8
+										optional
+											F4
+												optional
+													F41 {abstract}
+														alternative
+															F9
+															F10

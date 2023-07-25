@@ -1,0 +1,14 @@
+namespace Root
+
+features
+	A {abstract}	
+		optional
+			B	
+				optional
+					D
+			C	
+				optional
+					E
+
+constraints
+	D => !C

@@ -1,0 +1,52 @@
+namespace Pizza
+
+features
+	Pizza {abstract}	
+		mandatory
+			Topping {abstract}	
+				[2..5]
+					Salami
+					Ham
+					Mozzarella
+					Corn 
+					Mushroom
+			Size {abstract}	
+				alternative
+					Normal
+						mandatory
+							Dough {abstract}	
+								or
+									Classic
+									Wholemeal
+									GlutenFree
+								mandatory 
+									Classic
+			Extras {abstract}
+				[0..1]
+					Oregano
+					HotOil
+					Thyme
+					Rosemary
+		optional
+			CheesyCrust {abstract}
+				alternative
+					Cheddar
+					Ricotta
+					Brie
+				mandatory
+					Cheddar
+			Specials {abstract}
+				alternative
+					Vegetarian
+					Vegan
+				or 
+					Celiac
+					LactoseIntolerant
+					Diabetic
+
+constraints
+	Celiac => GlutenFree
+	LactoseIntolerant => !Mozzarella
+	CheesyCrust & Mozzarella => Big
+	Vegan => !Salami & !Ham & !Mozzarella
+	Vegetarian => !Salami & !Ham

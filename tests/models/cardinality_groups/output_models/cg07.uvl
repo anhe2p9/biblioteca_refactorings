@@ -1,0 +1,32 @@
+features
+	Root {abstract}
+		optional
+			F1
+				optional
+					F1B
+				optional
+					F2
+				optional
+					F3
+						optional
+							F6
+								optional
+									F5
+										optional
+											F7
+										optional
+											F8
+										optional
+											F8B
+								optional
+									F4
+										optional
+											F9
+										optional
+											F10
+										optional
+											F10B
+constraints
+	F1 => (((((F1B & F2) & !F3) | ((F1B & F3) & !F2)) | ((F2 & F3) & !F1B)) | ((F1B & F2) & F3))
+	F5 => (((((F7 & F8) & !F8B) | ((F7 & F8B) & !F8)) | ((F8 & F8B) & !F7)) | ((F7 & F8) & F8B))
+	F4 => (((((F9 & F10) & !F10B) | ((F9 & F10B) & !F10)) | ((F10 & F10B) & !F9)) | ((F9 & F10) & F10B))

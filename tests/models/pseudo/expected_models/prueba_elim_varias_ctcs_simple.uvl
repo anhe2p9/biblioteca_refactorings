@@ -1,0 +1,12 @@
+features
+	A{abstract}
+		optional
+			B
+				optional
+					D
+		optional
+			C
+				optional
+					E
+constraints
+	D => !C

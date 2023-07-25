@@ -1,0 +1,10 @@
+features
+	Root {abstract}
+		mandatory
+			F1
+				optional
+					F11 {abstract}
+						alternative
+							F2
+							F3
+							F4

@@ -1,0 +1,23 @@
+features
+	A {abstract}
+		optional
+			B
+				or
+					D
+					E
+		optional
+			C
+		mandatory
+			OR_FEATURE {abstract, aux}
+				or
+					A1 {abstract, aux}
+					B1 {abstract, aux}
+					C1 {abstract, aux}
+					D1 {abstract, aux}
+					E1 {abstract, aux}
+constraints
+	A1 requires A
+	B1 requires B
+	C1 requires C
+	D1 excludes D
+	E1 excludes E

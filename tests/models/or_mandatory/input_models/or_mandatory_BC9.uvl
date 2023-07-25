@@ -1,0 +1,17 @@
+namespace Root
+
+features
+	root {abstract}	
+		or
+			A	
+				or
+					D
+					E
+					F
+				mandatory
+					F
+			B
+			C
+		
+		mandatory
+			C

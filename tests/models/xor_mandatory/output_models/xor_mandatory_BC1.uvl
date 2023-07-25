@@ -1,0 +1,7 @@
+features
+	root {abstract}
+		[0]
+			A
+			B
+		mandatory
+			C

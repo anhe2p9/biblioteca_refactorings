@@ -1,0 +1,13 @@
+features
+	Root {abstract}
+		mandatory
+			Root1 {abstract}
+				or
+					F1
+					F2
+					F3
+		mandatory
+			Root2 {abstract}
+				alternative
+					F4
+					F5

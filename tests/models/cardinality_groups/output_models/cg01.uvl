@@ -1,0 +1,10 @@
+features
+	Root {abstract}
+		optional
+			F1
+		optional
+			F2
+		optional
+			F3
+constraints
+	Root => (((((F1 & F2) & !F3) | ((F1 & F3) & !F2)) | ((F2 & F3) & !F1)) | ((F1 & F2) & F3))

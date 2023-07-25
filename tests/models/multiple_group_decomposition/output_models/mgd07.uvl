@@ -1,0 +1,20 @@
+features
+	Root {abstract}
+		optional
+			F1
+				or
+					F2
+					F3
+						mandatory
+							F31 {abstract}
+								or
+									F5
+									F6
+									F7
+						mandatory
+							F32 {abstract}
+								alternative
+									F5B
+									F6B
+									F7B
+					F4

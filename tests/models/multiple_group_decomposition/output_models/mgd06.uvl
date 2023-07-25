@@ -1,0 +1,39 @@
+features
+	Root {abstract}
+		optional
+			F1
+				mandatory
+					F11 {abstract}
+						alternative
+							F2
+							F3
+								mandatory
+									F31 {abstract}
+										or
+											F5
+											F6
+											F7
+								mandatory
+									F32 {abstract}
+										alternative
+											F5B
+											F6B
+											F7B
+							F4
+								mandatory
+									F41 {abstract}
+										or
+											F8
+											F9
+											F10
+								mandatory
+									F42 {abstract}
+										alternative
+											F8B
+											F9B
+											F10B
+				mandatory
+					F12 {abstract}
+						or
+							F2B
+							F3B
