@@ -15,12 +15,12 @@ class RefactoringEngine():
 
     def get_refactorings(self) -> list[FMRefactoring]:
         """Return the list of all refactorings available."""
-        return [get_refactoring_from_name(ref_name) for ref_name in REFACTORINGS_NAMES]
+        return [self.get_refactoring_from_name(ref_name) for ref_name in REFACTORINGS_NAMES]
 
     def get_refactoring_for_instance(self, fm: FeatureModel, instance: Feature | Constraint) -> FMRefactoring:
         """Given a FM and an instance (feature or constraint), returns the applicable refactoring of the instance."""
         for refactoring_name in REFACTORINGS_NAMES:
-            refactoring = get_refactoring_from_name(refactoring_name)
+            refactoring = self.get_refactoring_from_name(refactoring_name)
             if instance in refactoring.get_instances(fm):
                 return refactoring
         return None
@@ -33,6 +33,7 @@ class RefactoringEngine():
         """Apply the given refactoring to all instances (features or constraints) of the given FM."""
         instances = refactoring.get_instances(fm)
         for instance in instances:
+            print(f'|->Applying {refactoring.get_name()} to instance {str(instance)}...')
             fm = self.apply_refactoring(refactoring, fm, instance)
         return fm
     
@@ -43,11 +44,10 @@ class RefactoringEngine():
             fm = self.apply_refactorings(refactoring, fm)
         return fm
 
-
-def get_refactoring_from_name(refactoring_name: str) -> FMRefactoring:
-    """Given the name of a refactoring class, return the instance class of the refactoring."""
-    modules = inspect.getmembers(REFACTORINGS)
-    modules = filter(lambda x: inspect.ismodule(x[1]), modules)
-    modules = [importlib.import_module(m[1].__name__) for m in modules]
-    class_ = next((getattr(m, refactoring_name) for m in modules if hasattr(m, refactoring_name)), None)
-    return class_
+    def get_refactoring_from_name(self, refactoring_name: str) -> FMRefactoring:
+        """Given the name of a refactoring class, return the instance class of the refactoring."""
+        modules = inspect.getmembers(REFACTORINGS)
+        modules = filter(lambda x: inspect.ismodule(x[1]), modules)
+        modules = [importlib.import_module(m[1].__name__) for m in modules]
+        class_ = next((getattr(m, refactoring_name) for m in modules if hasattr(m, refactoring_name)), None)
+        return class_
