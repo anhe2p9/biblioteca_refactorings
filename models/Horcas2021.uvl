@@ -1,0 +1,26 @@
+namespace Root
+
+features
+	AAFMFramework {abstract}	
+		optional
+			Packages	
+				or
+					python_sat
+					pyGlucose
+					pycosat
+					pyPicosat
+			Solvers	
+				or
+					MiniSAT
+					PicoSAT
+					Glucose
+			System	
+				alternative
+					Linux
+					Windows
+
+constraints
+	PicoSAT => pycosat | pyPicosat
+	Glucose => python_sat | pyGlucose
+	MiniSAT => python_sat
+	Windows => !pyPicosat

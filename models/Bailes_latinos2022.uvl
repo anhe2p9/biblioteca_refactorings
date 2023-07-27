@@ -1,0 +1,130 @@
+namespace Root
+
+features
+	LatinDance {abstract}	
+		mandatory
+			Tipo	
+				alternative
+					Bachata	
+						mandatory
+							Ramas	
+								alternative
+									Tradicional
+									Sensual
+									Smooth
+									Moderna
+									Fusion
+
+						optional
+							Dancers	
+								optional
+									Alex_y_Desiree
+									Daniel_y_Desiree
+									Raquel_y_Pablo
+									Ataca_y_LaAlemana
+									Ronald_y_Alba
+							Figuras	
+								alternative
+									Bolero
+									Sombrero
+									Vuelta
+									Lanzamiento_brazo
+
+						mandatory
+							Posiciones	
+								alternative
+									Sombra
+									Cerrada
+									Media
+									Abierta	
+										alternative
+											Figura
+											Bloqueo
+							Basico	
+								alternative
+									Basico_tradicional
+									Basico_sensual
+									con_Swing	
+										alternative
+											cadera_contraria
+											cadera_mismo_lado
+									cuadrado
+									diagonales
+									fig_en_8
+									Merengue
+					Salsa	
+						mandatory
+							segun_origen	
+								alternative
+									Línea	
+										alternative
+											Nueva_York
+											Puerto_Rico
+											Los_Angeles
+									Cubana	
+										optional
+											Rueda_cubana
+
+						optional
+							variaciones	
+								or
+									son
+									clave	
+										alternative
+											clave_2_3
+											clave_3_2
+									pachanga
+									rumba
+			Rol	
+				alternative
+					Leader
+					Follower
+					Rotative
+
+		optional
+			Tecnica	
+				mandatory
+					Estructura	
+						optional
+							Activacion
+							Conexion
+					Recursos	
+						or
+							Cambre
+							Uve
+							Redondo
+							Onda
+
+				optional
+					Flexibilidad
+					Estabilidad	
+						mandatory
+							Peso_alante
+
+				mandatory
+					Respiracion	
+						alternative
+							Inspirar
+							Exhalar
+
+		mandatory
+			Partes_Cuerpo	
+				optional
+					Espalda
+					Abdomen
+					Pelvis
+					Cuello
+					Hombros
+					Codos
+
+constraints
+	Alex_y_Desiree => Tradicional
+	Daniel_y_Desiree => Sensual
+	Raquel_y_Pablo => Smooth
+	Ataca_y_LaAlemana => Moderna
+	Ronald_y_Alba => Fusion
+	Cambre => Flexibilidad & Espalda & Abdomen
+	Cambre => Inspirar
+	Redondo => Exhalar
+	Uve => Activacion & Codos
+	Uve => Flexibilidad & Hombros
