@@ -21,6 +21,7 @@ features
 									GlutenFree
 								mandatory 
 									Classic
+					Big
 			Extras {abstract}
 				[0..1]
 					Oregano

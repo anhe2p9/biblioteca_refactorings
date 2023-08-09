@@ -20,6 +20,7 @@ features
 									GlutenFree
 								mandatory
 									Classic
+					Big
 		mandatory
 			Extras {abstract}
 				[0..1]
